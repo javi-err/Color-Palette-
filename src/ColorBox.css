@@ -2,7 +2,56 @@
     width: 20%;
     height: 25%;
     display: inline-block;
-    position: display;
+    position: relative;
     margin: 0 auto;
     cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: -3.5px;
+}
+
+.copy-button {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -15px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 30px;
+    opacity: 0;
+}
+
+.ColorBox:hover .copy-button {
+    opacity: 1;
+    transition: .5s
+}
+
+.box-content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom : 0;
+    padding: 10px;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: black;
+
+}
+
+.see-more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    opacity: .8;
 }
