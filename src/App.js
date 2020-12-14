@@ -8,7 +8,7 @@ export class App extends Component {
     console.log(newPaletteGenerator(seed[2]))
     return (
       <div>
-      <Palette {...seed[2]} />
+      <Palette palette= {newPaletteGenerator(seed[2])} />
     </div>
     )
   }
