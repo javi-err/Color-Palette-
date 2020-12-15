@@ -5,3 +5,26 @@
 .palette-colors {
     height: 90%;
 }
+
+.slider {
+    width: 450px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.rc-slider-track {
+    background-color: transparent;
+}
+
+.rc-slider-rail {
+    height: 8px;
+}
+
+.rc-slider-handle, .rc-slider-handle:active, .rc-slider-handle:focus, .rc-slider-handle:hover {
+    background-color: red;
+    outline: none;
+    border: 2px solid red;
+    box-shadow: none;
+    height: 1rem;
+    width: 1rem;
+}
