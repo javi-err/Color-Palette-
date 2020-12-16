@@ -27,7 +27,8 @@ export class ColorBox extends Component {
         const { isCopied } = this.state
         return (
             <div className="ColorBox" style={{background}}>
-                <div className={`copy-overlay ${isCopied && 'copied'}`}><span>Copied!</span>{this.state.background}</div>
+                <div className={`copy-overlay ${isCopied && 'copied'}`}>
+                    <span>Copied! {background}</span>{this.state.background}</div>
                 <div className="copy-container">
                     <div className="box-content">
                         <span>{name}</span>

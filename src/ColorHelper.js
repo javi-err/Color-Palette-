@@ -22,7 +22,7 @@ const newPaletteGenerator = (starterPalette) => {
                 id: color.name.toLowerCase().replace([/ /g, "-"]),
                 hex: lev[i],
                 rgb: chroma(lev[i]).css(),
-                rgba: chroma(lev[i]).css().replace("rgb", "rgba").replace(")", "1.0)")
+                rgba: chroma(lev[i]).css().replace("rgb", "rgba").replace(")", ",1.0)")
             })
         }
     }
