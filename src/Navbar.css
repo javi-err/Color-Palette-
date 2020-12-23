@@ -1,7 +1,7 @@
 .Navbar {
     display: flex;
     align-items: center;
-    justify-items: flex-start;
+    justify-content: space-between;
     height: 7.5vh;
     background-color: #FA8BFF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
@@ -13,10 +13,10 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 2rem;
     margin-right: 5rem;
     letter-spacing: 2px;
-    font-weight: 500;   
+    font-weight: 500; 
+    padding: 2rem;  
     }
 
 .home a{
@@ -27,6 +27,23 @@
     width: 450px;
     margin: 0 10px;
     display: inline-block;
+}
+
+.palette-footer{    
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.palette-emoji {
+    margin-left: 2rem;
+}
+
+.slider-container {
+    margin-right: 7rem;
+}
+
+.color-select {
+    padding: 2rem;
 }
 
 .rc-slider-track {

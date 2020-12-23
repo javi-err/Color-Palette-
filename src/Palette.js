@@ -34,7 +34,7 @@ export class Palette extends Component {
     render() {
         
         const { level, format } = this.state
-        const { colors } = this.props.palette
+        const { colors, paletteName, emoji } = this.props.palette
         const colorBoxes = colors[level].map(box => {
             console.log(box[format])
             return <ColorBox background={box[format]} name={box.name} />
@@ -47,10 +47,15 @@ export class Palette extends Component {
                 <Navbar 
                 level={level} 
                 handleLevelChange={this.handleLevelChange} 
-                handleFormatChange={this.handleFormatChange}/>
+                handleFormatChange={this.handleFormatChange}
+                />
                 <div className="palette-colors">
                     {colorBoxes}
                 </div>
+                <footer className="palette-footer">
+                    {paletteName} 
+                    <span className="palette-emoji">{emoji}</span>
+                </footer>
             </div>
         )
     }
