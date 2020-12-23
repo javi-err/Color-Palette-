@@ -5,29 +5,40 @@ import Slider from 'rc-slider'
 import './Navbar.css'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
-
+import Snackbar from '@material-ui/core/Snackbar'
+import CloseIcon from '@material-ui/icons/Close'
+import IconButton from '@material-ui/core/IconButton'
 
 export class Navbar extends Component {
     constructor(){
         super()
 
         this.state = {
-            format: 'hex'
+            format: 'hex',
+            open: false
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleClose = this.handleClose.bind(this)
     }
 
     handleChange(e) {
         this.setState({
-            format: e.target.value
+            format: e.target.value,
+            open: true,
         })
 
         this.props.handleFormatChange(e.target.value)
     }
 
+    handleClose(){
+        this.setState({
+            open: false,
+        })
+    }
+
     render() {
-        const {level, handleLevelChange, handleChange} = this.props
+        const {level, handleLevelChange} = this.props
         const { format } = this.state
         return (
             <nav className="Navbar">
@@ -53,6 +64,27 @@ export class Navbar extends Component {
                         <MenuItem value='rgba'>RGBA - rgba(255, 255, 255, 1)</MenuItem>
                     </Select>
                 </div>
+
+                <Snackbar 
+                anchorOrigin={{vertical: "bottom", horizontal: "left"}} 
+                open={this.state.open}
+                autoHideDuration={3000}
+                message={<span id="message-id">Format changed to {format}</span>}
+                onClose={this.handleClose}
+                ContentProps={{
+                    "aria-describedby": "message-id"
+                }}
+                action={[
+                    <IconButton 
+                    onClick={this.handleClose} 
+                    color="inherit" 
+                    key="close" 
+                    aria-label="close">
+                        <CloseIcon />
+                    </IconButton>
+                ]}
+
+                />
 
             </nav>
         )
