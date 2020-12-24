@@ -36,7 +36,6 @@ export class Palette extends Component {
         const { level, format } = this.state
         const { colors, paletteName, emoji } = this.props.palette
         const colorBoxes = colors[level].map(box => {
-            console.log(box[format])
             return <ColorBox background={box[format]} name={box.name} />
 
         })

@@ -28,10 +28,6 @@ export class App extends Component {
         />
       </Switch>
 
-    //   {/* <div>
-    //   <Palette palette= {newPaletteGenerator(seed[2])} />
-    // </div> */}
-    
     )
   }
 }

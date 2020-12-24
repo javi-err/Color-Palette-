@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PaletteList from './PaletteList'
 import { Link } from 'react-router-dom'
 
 export class PaletteHome extends Component {
@@ -8,16 +9,13 @@ export class PaletteHome extends Component {
     console.log(palettes)
         return (
             <div>
+
                 <h1>Color Palette</h1>
                 
                 <div class="palette-list">
                 {palettes.map((palette) => {
                    return (
-                   <Link to={`/palette/${palette.id}`}>
-                        <div className="palette-container">
-                            {palette.paletteName}
-                        </div>
-                   </Link>
+                    <PaletteList {...palette} />
                    )
                 })
             }
