@@ -13,9 +13,14 @@ const styles = {
 }
 
 export class PaletteHome extends Component {
+     
+    goToPalette(id) {
+        this.props.history.push(`/palette/${id}`)
+    }
 
     render() {
     const { classes, palettes } = this.props
+
 
     console.log(palettes)
         return (
@@ -26,13 +31,13 @@ export class PaletteHome extends Component {
                 <div className="palette-list">
                 {palettes.map((palette) => {
                    return (
-                    <PaletteList {...palette} />
+                    <PaletteList {...palette} handleNav={() => this.goToPalette(palette.id)} />
                    )
                 })
             }
                 </div>
             </div>
-        )
+        ) 
     }
 }
 

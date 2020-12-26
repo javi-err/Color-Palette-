@@ -19,7 +19,7 @@ export class App extends Component {
     console.log(newPaletteGenerator(seed[2]))
     return (
       <Switch>
-        <Route exact path="/" render={() => <PaletteHome palettes={seed}/>} />
+        <Route exact path="/" render={(routeProps) => <PaletteHome palettes={seed} {...routeProps}/>} />
         <Route 
         exact path="/palette/:id" 
         render={routeProps => (
